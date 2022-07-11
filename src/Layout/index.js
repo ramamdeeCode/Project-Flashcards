@@ -39,7 +39,7 @@ function Layout() {
             <DeckList decks={decks} />
           </Route>
           <Route exact path={"/new"}>
-            <CreateDeck createDeck={createDeck} />
+            <CreateDeck createDeck={createDeck} decks={decks} />
           </Route>
           <Route>
             <NotFound />

@@ -1,3 +1,4 @@
+import React from "react";
 function Deck({ decks }) {
   console.log(decks);
   return (

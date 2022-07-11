@@ -1,15 +1,29 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function CreateDeck({ createDeck }) {
-  const initialFormState = { name: "", description: "" };
+function CreateDeck({ createDeck, decks }) {
+  const initialFormState = { id: decks.length + 1, name: "", description: "" };
+  console.log("first length: ", decks.length);
+
   const [formData, setFormData] = useState({
     ...initialFormState,
   });
 
-  const handleFormChange = null;
+  const handleFormChange = ({ target }) => {
+    setFormData({
+      ...formData,
+      [target.name]: target.value,
+      [target.description]: target.value,
+    });
+  };
 
-  const handleSubmit = null;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    createDeck(formData);
+    console.log("on handle submit:", decks.length);
+    console.log("Submitted:", formData);
+    setFormData({ ...initialFormState });
+  };
 
   return (
     <div>
