@@ -5,6 +5,7 @@ import Header from "./Header";
 import NotFound from "./NotFound";
 import DeckList from "../components/DeckList";
 import BtnCreate from "../components/BtnCreate";
+import CreateDeck from "../components/CreateDeck";
 
 function Layout() {
   return (
@@ -17,7 +18,11 @@ function Layout() {
           <Switch>
             <Route exact path={"/"}>
               <BtnCreate />
+              <br />
               <DeckList />
+            </Route>
+            <Route path={"/new"}>
+              <CreateDeck />
             </Route>
             <Route>
               <NotFound />
