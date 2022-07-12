@@ -1,10 +1,13 @@
-import { listDecks } from "../utils/api/index";
+import { listDecks, deleteDeck } from "../utils/api/index";
 
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 
 function DeckList() {
+  const history = useHistory();
   const [decks, setDecks] = useState([]);
 
+  //fetch and load dat to decks
   useEffect(() => {
     async function loadDecks() {
       const abortController = new AbortController();
@@ -21,6 +24,16 @@ function DeckList() {
     loadDecks();
   }, []);
 
+  //delete deck handler
+  const handleDeckDelete = async (event) => {
+    if (
+      window.confirm(`Delete this deck ? You will not be able to recover it.`)
+    ) {
+      await deleteDeck(event);
+      history.go(0);
+    }
+  };
+
   return (
     <div>
       {/* {map decks objects and display out the name and description} */}
@@ -33,7 +46,12 @@ function DeckList() {
             <span> </span>
             <button className="btn btn-primary">Study</button>
             <span> </span>
-            <button className="btn btn-danger">Trush</button>
+            <button
+              onClick={() => handleDeckDelete(deck.id)}
+              className="btn btn-danger"
+            >
+              Trush
+            </button>
           </div>
         </div>
       ))}
