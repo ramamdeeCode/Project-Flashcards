@@ -6,6 +6,7 @@ import NotFound from "./NotFound";
 import DeckList from "../components/DeckList";
 import BtnCreate from "../components/BtnCreate";
 import CreateDeck from "../components/CreateDeck";
+import ViewDeck from "../components/ViewDeck";
 
 function Layout() {
   return (
@@ -21,8 +22,11 @@ function Layout() {
               <br />
               <DeckList />
             </Route>
-            <Route path={"/new"}>
+            <Route path={"/decks/new"}>
               <CreateDeck />
+            </Route>
+            <Route path={"/decks/:deckId"}>
+              <ViewDeck />
             </Route>
             <Route>
               <NotFound />
