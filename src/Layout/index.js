@@ -7,12 +7,12 @@ import DeckList from "../components/DeckList";
 import BtnCreate from "../components/BtnCreate";
 import CreateDeck from "../components/CreateDeck";
 import ViewDeck from "../components/ViewDeck";
+import StudyDeck from "../components/StudyDeck";
 
 function Layout() {
   return (
     <>
       <Header />
-
       <Router>
         <div className="container">
           {/* TODO: Implement the screen starting here */}
@@ -22,11 +22,14 @@ function Layout() {
               <br />
               <DeckList />
             </Route>
-            <Route path={"/decks/new"}>
+            <Route exact path={"/decks/new"}>
               <CreateDeck />
             </Route>
-            <Route path={"/decks/:deckId"}>
+            <Route exact path={"/decks/:deckId"}>
               <ViewDeck />
+            </Route>
+            <Route path="/decks/:deckId/study">
+              <StudyDeck />
             </Route>
             <Route>
               <NotFound />
