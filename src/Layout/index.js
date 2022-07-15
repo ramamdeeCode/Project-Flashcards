@@ -8,6 +8,7 @@ import BtnCreate from "../components/BtnCreate";
 import CreateDeck from "../components/CreateDeck";
 import ViewDeck from "../components/ViewDeck";
 import StudyDeck from "../components/StudyDeck";
+import EditDeck from "../components/EditDeck";
 
 function Layout() {
   return (
@@ -27,6 +28,9 @@ function Layout() {
             </Route>
             <Route exact path={"/decks/:deckId"}>
               <ViewDeck />
+            </Route>
+            <Route path="/decks/:deckId/edit">
+              <EditDeck />
             </Route>
             <Route path="/decks/:deckId/study">
               <StudyDeck />
