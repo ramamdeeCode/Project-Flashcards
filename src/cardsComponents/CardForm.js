@@ -1,4 +1,5 @@
-function Cardform({ formData, handleFormFrontChange, handleFormBackChange }) {
+import React from "react";
+function CardForm({ formData, handleFormFrontChange, handleFormBackChange }) {
   return (
     <div>
       <form>
@@ -24,4 +25,4 @@ function Cardform({ formData, handleFormFrontChange, handleFormBackChange }) {
     </div>
   );
 }
-export default Cardform;
+export default CardForm;
