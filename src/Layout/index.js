@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Header from "./Header";
 import NotFound from "./NotFound";
-import DeckList from "../components/DeckList";
-import BtnCreate from "../components/BtnCreate";
-import CreateDeck from "../components/CreateDeck";
-import ViewDeck from "../components/ViewDeck";
-import StudyDeck from "../components/StudyDeck";
-import EditDeck from "../components/EditDeck";
+import DeckList from "../decksComponents/DeckList";
+import BtnCreate from "../decksComponents/BtnCreate";
+import CreateDeck from "../decksComponents/CreateDeck";
+import ViewDeck from "../decksComponents/ViewDeck";
+import StudyDeck from "../decksComponents/StudyDeck";
+import EditDeck from "../decksComponents/EditDeck";
 
 function Layout() {
   return (
