@@ -15,9 +15,9 @@ function ViewDeck() {
       try {
         const fetchedDeck = await readDeck(deckId, abortController.signal);
         setDeck(fetchedDeck);
-        setCards(fetchedDeck.cards);
+        setCards([...fetchedDeck.cards]);
       } catch (e) {
-        console.error(e);
+        console.log(e);
       }
       return () => {
         abortController.abort();
