@@ -23,7 +23,6 @@ function DeckList() {
     }
     loadDecks();
   }, []);
-  console.log("decks", decks);
 
   //delete deck handler
   const handleDeckDelete = async (event) => {

@@ -6,9 +6,9 @@ function ViewDeck() {
   const history = useHistory();
   const { deckId } = useParams();
 
-  const [deck, setDeck] = useState([]);
+  const [deck, setDeck] = useState({});
   const [cards, setCards] = useState([]);
-
+  console.log("DeckId from ViewDeck:", deckId);
   useEffect(() => {
     async function loadDeck() {
       const abortController = new AbortController();
@@ -17,7 +17,7 @@ function ViewDeck() {
         setDeck(fetchedDeck);
         setCards(fetchedDeck.cards);
       } catch (e) {
-        console.log(e.name);
+        console.error(e);
       }
       return () => {
         abortController.abort();
@@ -25,6 +25,8 @@ function ViewDeck() {
     }
     loadDeck();
   }, [deckId]);
+  console.log("cards from ViewDeck:", cards);
+  //console.log("deck from ViewDeck:", deck);
 
   // delete handler for deck
   const handleDeleteDeck = async (event) => {
@@ -101,6 +103,9 @@ function ViewDeck() {
       <h2>Cards</h2>
 
       {cards.map((card) => {
+        {
+          console.log("cards from map", cards);
+        }
         return (
           <div className="card-deck" key={card.id}>
             <div className="card my-1">

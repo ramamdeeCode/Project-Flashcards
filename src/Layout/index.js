@@ -14,42 +14,38 @@ import EditCard from "../cardsComponents/EditCard";
 
 function Layout() {
   return (
-    <>
-      <Header />
-      <Router>
-        <div className="container">
-          {/* TODO: Implement the screen starting here */}
-          <Switch>
-            <Route exact path={"/"}>
-              <BtnCreate />
-              <br />
-              <DeckList />
-            </Route>
-            <Route exact path={"/decks/new"}>
-              <CreateDeck />
-            </Route>
-            <Route exact path={"/decks/:deckId"}>
-              <ViewDeck />
-            </Route>
-            <Route path="/decks/:deckId/edit">
-              <EditDeck />
-            </Route>
-            <Route path="/decks/:deckId/study">
-              <StudyDeck />
-            </Route>
-            <Route path="/decks/:deckId/cards/new">
-              <AddCard />
-            </Route>
-            <Route path="/decks/:deckId/cards/:cardId/edit">
-              <EditCard />
-            </Route>
-            <Route>
-              <NotFound />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-    </>
+    <div>
+      <div className="container">
+        {/* TODO: Implement the screen starting here */}
+        <Header />
+        <Route exact path={"/"}>
+          <BtnCreate />
+          <br />
+          <DeckList />
+        </Route>
+        <Route exact path="/decks/new">
+          <CreateDeck />
+        </Route>
+        <Route exact path="/decks/:deckId">
+          <ViewDeck />
+        </Route>
+        <Route path="/decks/:deckId/study">
+          <StudyDeck />
+        </Route>
+        <Route path="/decks/:deckId/edit">
+          <EditDeck />
+        </Route>
+        <Route path="/decks/:deckId/cards/new">
+          <AddCard />
+        </Route>
+        <Route path="/decks/:deckId/cards/:cardId/edit">
+          <EditCard />
+        </Route>
+        <Route>
+          <NotFound />
+        </Route>
+      </div>
+    </div>
   );
 }
 

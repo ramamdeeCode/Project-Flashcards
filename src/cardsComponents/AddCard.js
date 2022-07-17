@@ -22,10 +22,10 @@ function AddCard() {
     async function loadData() {
       try {
         const response = await readDeck(deckId, abortController.signal);
-        console.log("resspnse", response);
+
         setDeck(response);
       } catch (e) {
-        console.log(e.name);
+        console.log(e);
       }
       return () => {
         abortController.abort();
@@ -49,7 +49,7 @@ function AddCard() {
     await createCard(deckId, formData);
     setFormData(initialFormState);
   };
-  console.log();
+
   return (
     <div>
       <nav>
