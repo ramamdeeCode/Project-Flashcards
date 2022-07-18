@@ -21,18 +21,6 @@ function CreateDeck() {
     });
   };
 
-  // const handleNameChange = (event) => {
-  //   setFormData({
-  //     ...formData,
-  //     name: event.target.value,
-  //   });
-  // };
-  // const handleDescriptionChange = (event) => {
-  //   setFormData({
-  //     ...formData,
-  //     description: event.target.value,
-  //   });
-  // };
   // create deck and push the deck.id page on submit
   async function deckCreate() {
     try {
