@@ -18,7 +18,6 @@ function CreateDeck() {
     setFormData({
       ...formData,
       [target.name]: target.value,
-      [target.description]: target.value,
     });
   };
 
