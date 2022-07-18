@@ -23,7 +23,7 @@ function DeckList() {
     }
     loadDecks();
   }, []);
-
+  // return Decks components that map all the decks
   return <Decks decks={decks} deleteDeck={deleteDeck} />;
 }
 

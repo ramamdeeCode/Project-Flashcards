@@ -3,23 +3,22 @@ import { deleteCard } from "../utils/api/index";
 
 function Card({ cards, deck }) {
   const history = useHistory();
+
   //handle delete card
   const handleDeleteCard = async (event) => {
     if (
       window.confirm(`Delete this card? You will not be able to recover it.`)
     ) {
       await deleteCard(event);
+      //send back to the previous page after delete
       history.go(0);
     }
   };
   return (
     <>
       <h2>Cards</h2>
-
+      {/* map out all the available cards */}
       {cards.map((card) => {
-        {
-          console.log("cards from map", cards);
-        }
         return (
           <div className="card-deck" key={card.id}>
             <div className="card my-1">

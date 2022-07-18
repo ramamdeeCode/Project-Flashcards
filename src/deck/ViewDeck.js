@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+
 import { readDeck } from "../utils/api/index";
 import Deck from "./Deck";
 import Card from "./Card";
 
 function ViewDeck() {
+  //getting deckId from Params
   const { deckId } = useParams();
 
   const [deck, setDeck] = useState({});
   const [cards, setCards] = useState([]);
   console.log("DeckId from ViewDeck:", deckId);
+
+  // load data when deckId change
   useEffect(() => {
     async function loadDeck() {
       const abortController = new AbortController();
@@ -26,8 +30,8 @@ function ViewDeck() {
     }
     loadDeck();
   }, [deckId]);
+
   console.log("cards from ViewDeck:", cards);
-  //console.log("deck from ViewDeck:", deck);
 
   return (
     // bread crump for each single deck
@@ -43,10 +47,10 @@ function ViewDeck() {
         </ol>
       </nav>
 
-      {/* responsible for desplaying a single deck */}
+      {/* this component responsible for desplaying a single deck */}
       <Deck deck={deck} deckId={deckId} />
 
-      {/* responsible for desplaying all the card of the selected deck */}
+      {/* this component responsible for desplaying all the card of the selected deck */}
       <Card cards={cards} deck={deck} />
     </div>
   );

@@ -5,11 +5,13 @@ import NotEnoughCard from "./NotEnoughCard";
 import EnoughCards from "./EnoughCards";
 
 function StudyDeck() {
+  // getting deckId from params
   const { deckId } = useParams();
+
   const [deck, setDeck] = useState({});
   const [numberOfCards, setNumberOfCard] = useState(0);
 
-  //load deck data
+  //load deck data when evre the deckId change
   useEffect(() => {
     async function loadDeck() {
       const abortController = new AbortController();
