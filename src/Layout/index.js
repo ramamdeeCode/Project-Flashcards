@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Header from "./Header";
 import NotFound from "./NotFound";
-import DeckList from "../decksComponents/DeckList";
-import BtnCreate from "../decksComponents/BtnCreate";
-import CreateDeck from "../decksComponents/CreateDeck";
-import ViewDeck from "../decksComponents/ViewDeck";
-import StudyDeck from "../decksComponents/StudyDeck";
-import EditDeck from "../decksComponents/EditDeck";
-import AddCard from "../cardsComponents/AddCard";
-import EditCard from "../cardsComponents/EditCard";
+import DeckList from "../deck/DeckList";
+import BtnCreate from "../deck/BtnCreate";
+import CreateDeck from "../deck/CreateDeck";
+import ViewDeck from "../deck/ViewDeck";
+import StudyDeck from "../deck/StudyDeck";
+import EditDeck from "../deck/EditDeck";
+import AddCard from "../card/AddCard";
+import EditCard from "../card/EditCard";
 
 function Layout() {
   return (
