@@ -58,6 +58,12 @@
       "back": "You guess it write",
       "deckId": 4,
       "id": 6
+    },
+    {
+      "front": "Front side",
+      "back": "Back side",
+      "deckId": 1,
+      "id": 7
     }
   ]
 }
